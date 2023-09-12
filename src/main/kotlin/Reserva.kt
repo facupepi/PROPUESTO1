@@ -4,6 +4,7 @@ class Reserva(
     var montoTotal : Double,
     var cliente: Cliente,
     var propiedad: Propiedad,
+    var pago: Pago?
 ) {
     init {
         this.propiedad.disponibilidad = false //cambiar atributo a la reservva

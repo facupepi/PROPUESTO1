@@ -10,11 +10,13 @@ fun main() {
 
     cabaña1.servicio = "nueva calefaccion"
 
-    val reserva1 = Reserva("2022","2023",100.0,cliente1,casa1)
-    val reserva2 = Reserva("2020","2021",200.0,cliente2,casa2)
-    val reserva3 = Reserva("2019","2021",200.0,cliente3,casa2)
+    var pago1 = Pago("2023",100.0)
 
-    var pago1 = Pago("2023",100.0,reserva1)
+    val reserva1 = Reserva("2022","2023",100.0,cliente1,casa1,pago1)
+    val reserva2 = Reserva("2020","2021",200.0,cliente2,casa2,null)
+    val reserva3 = Reserva("2019","2021",200.0,cliente3,casa2,null)
+
+
 
     var gestor = GestorDeReservaYPago()
     gestor.agregarReserva(reserva1)

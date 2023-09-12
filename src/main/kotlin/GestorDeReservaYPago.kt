@@ -34,7 +34,7 @@ class GestorDeReservaYPago(
         return reservasDeLaPropiedad
     }
 /*
-    fun getReservasNoPagadas3() : ArrayList<Reserva> {
+    fun getReservasNoPagadas() : ArrayList<Reserva> {
         var reservasImpagas : ArrayList<Reserva> = reservas
         for(pagoTemp in pagos){
             reservasImpagas.remove(pagoTemp.reserva)
@@ -42,7 +42,7 @@ class GestorDeReservaYPago(
         return reservasImpagas
     }
 
-    fun getReservaNoPagadas2(): ArrayList<Reserva> {
+    fun getReservaNoPagadas(): ArrayList<Reserva> {
         var reservasNoPagadas: ArrayList<Reserva> = arrayListOf()
 
         for(reserv in reservas){
@@ -57,8 +57,7 @@ class GestorDeReservaYPago(
         }
         return reservasNoPagadas
     }
-*/
-    fun getReservasNoPagadas() : ArrayList<Reserva> {
+        fun getReservasNoPagadas() : ArrayList<Reserva> {
         var reservasImpagas : ArrayList<Reserva> = arrayListOf()
         for(reservaTemp in reservas){
             if (!reservaPagada(reservaTemp)){
@@ -77,5 +76,19 @@ class GestorDeReservaYPago(
         }
         return flag
     }
+*/
+
+    fun getReservasNoPagadas() : ArrayList<Reserva> {
+        var reservasImpagas : ArrayList<Reserva> = arrayListOf()
+        for(reservaTemp in reservas){
+            if (reservaTemp.pago == null){
+                reservasImpagas.add(reservaTemp)
+            }
+        }
+        return reservasImpagas
+    }
+
+
+
 
 }
