@@ -10,4 +10,24 @@ fun main() {
 
     cabaña1.servicio = "nueva calefaccion"
 
+    val reserva1 = Reserva("2022","2023",100.0,cliente1,casa1)
+    val reserva2 = Reserva("2020","2021",200.0,cliente2,casa2)
+    val reserva3 = Reserva("2019","2021",200.0,cliente3,casa2)
+
+    var pago1 = Pago("2023",100.0,reserva1)
+
+    var gestor = GestorDeReservaYPago()
+    gestor.agregarReserva(reserva1)
+    gestor.agregarReserva(reserva2)
+    gestor.agregarReserva(reserva3)
+
+    gestor.agregarPago(pago1)
+
+    var reservasCliente1 = gestor.getReservasCliente(cliente1)
+    var reservasCasa1 =gestor.getReservasPropiedad(casa2)
+
+    println("\n\nRESERVAS DEL CLIENTE 1---------------------------------- \n" +reservasCliente1 +"RESERVAS DEL CLIENTE 1---------------------------------- \n\n")
+    println("\n\nRESERVAS DE LA CASA 1---------------------------------- \n" +reservasCasa1 +"RESERVAS DE LA CASA 1---------------------------------- \n\n")
+
+    println("\n\nRESERVAS NO PAGADAS--------------------------------- \n" +gestor.getReservasNoPagadas()+"RESERVAS NO PAGADAS---------------------------------- \n\n")
 }

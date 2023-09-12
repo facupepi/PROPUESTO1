@@ -4,5 +4,7 @@ class Cliente (
     var direccion: String,
     var telefono : Int
 ){
-
+    override fun toString(): String {
+        return "NOMBRE: $nombre - APELLIDO: $apellido - DIRECCION: $direccion - TELEFONO: $telefono"
+    }
 }
